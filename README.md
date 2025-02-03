@@ -1,5 +1,4 @@
-# DormitoryManagementSystem
-基于Java和MySQL的简易学生寝室管理系统，可用于Java高级开发是期末作业<br>
+#基于Java和MySQL的简易学生寝室管理系统，可用于Java高级开发是期末作业<br>
 <br>
 【提醒事项】<br>
 1.该项目使用Idea运行，JDK版本为17，如果使用不同JDK版本，自行修改pom.xml中的部分：<br>
