@@ -1,0 +1,2 @@
+# DormitoryManagementSystem
+基于Java和MySQL的简易学生寝室管理系统，可用于Java高级开发是期末作业
