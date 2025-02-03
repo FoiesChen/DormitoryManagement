@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.ViolationMapper">
+
+    <!--查询全部-->
+    <select id="selectAll" resultType="ViolationList">
+        select *
+        from violation_records
+    </select>
+
+    <!--查询自记录编号-->
+    <select id="selectById" resultType="ViolationList">
+        select *
+        from violation_records
+        where violation_record_id = #{id};
+    </select>
+
+    <!--查询自寝室编号-->
+    <select id="selectBydoId" resultType="ViolationList">
+        select *
+        from violation_records
+        where dormitory_id = #{id};
+    </select>
+
+    <!--新建记录-->
+    <insert id="newviolation">
+        insert into violation_records(violation_record_id,employee_id,dormitory_id,violation_time,violation_content)
+        values(#{id},#{employeeid},#{dormitoryid},#{violation_time},#{violationcontent});
+    </insert>
+
+</mapper>

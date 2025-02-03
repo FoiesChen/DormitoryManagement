@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.StudentMapper">
+
+    <!--查询全部-->
+    <select id="selectAll" resultType="studentList">
+        select *
+        from students
+    </select>
+
+    <!--查询自学号-->
+    <select id="selectById" resultType="studentList">
+        select *
+        from students
+        where studentID = #{id}
+    </select>
+
+    <!--模糊查询自学号-->
+    <select id="findById" resultType="studentList">
+        select *
+        from students
+        where studentID LIKE CONCAT('%' ,#{id} ,'%')
+    </select>
+
+    <!--更新寝室楼-->
+    <update id="updateNameById">
+        update students
+        set name = #{name}
+        where studentID = #{id}
+    </update>
+
+    <!--更新层数-->
+    <update id="updateMajorById">
+        update students
+        set major = #{major}
+        where studentID = #{id}
+    </update>
+
+    <!--更新寝室号-->
+    <update id="updateDormitoryById">
+        update students
+        set dormitory = #{dormitory}
+        where studentID = #{id}
+    </update>
+
+    <!--更新寝室楼-->
+    <update id="updateDormitoryBuildingById">
+        update students
+        set dormitory_building = #{dormitory_building}
+        where studentID = #{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from students where studentID = #{id}
+    </delete>
+</mapper>

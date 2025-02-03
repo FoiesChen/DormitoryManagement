@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.project.pojo"/>
+    </typeAliases>
+    
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///test?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/project/mapper/StudentMapper.xml"/>
+        <mapper resource="com/project/mapper/DormitoryadminsMapper.xml"/>
+        <mapper resource="com/project/mapper/MaintenanceMapper.xml"/>
+        <mapper resource="com/project/mapper/System_adminMapper.xml"/>
+        <mapper resource="com/project/mapper/AnnouncementsMapper.xml"/>
+        <mapper resource="com/project/mapper/ViolationMapper.xml"/>
+        <mapper resource="com/project/mapper/SanitationMapper.xml"/>
+    </mappers>
+</configuration>

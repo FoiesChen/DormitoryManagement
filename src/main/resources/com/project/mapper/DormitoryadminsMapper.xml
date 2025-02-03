@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.DormitoryadminsMapper">
+
+
+    <!--查询全部-->
+    <select id="selectAll" resultType="DormitoryadminsList">
+        select *
+        from dormitory_admins
+    </select>
+
+    <!--查询自工号-->
+    <select id="selectById" resultType="DormitoryadminsList">
+        select *
+        from dormitory_admins
+        where employee_id = #{id};
+    </select>
+
+    <!--更新寝室楼-->
+    <update id="updateDormitoryBuildingById">
+        update dormitory_admins
+        set dormitory_building = #{dormitory_building}
+        where employee_id = #{id}
+    </update>
+
+    <!--更新层数-->
+    <update id="updatefloorsById">
+        update dormitory_admins
+        set floors = #{floors}
+        where employee_id = #{id}
+    </update>
+
+    <!--更新姓名-->
+    <update id="updateNameById">
+        update dormitory_admins
+        set name = #{name}
+        where employee_id = #{id}
+    </update>
+
+    <!--更新联系方式-->
+    <update id="updatecontact_infoById">
+        update dormitory_admins
+        set contact_info = #{contact_info}
+        where employee_id = #{id}
+    </update>
+
+</mapper>

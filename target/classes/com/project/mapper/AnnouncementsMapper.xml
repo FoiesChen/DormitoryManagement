@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.AnnouncementsMapper">
+
+
+    <!--查询全部-->
+    <select id="selectAll" resultType="announcementsList">
+        select *
+        from announcements
+    </select>
+
+    <!--查询自编号-->
+    <select id="selectById" resultType="announcementsList">
+        select *
+        from announcements
+        where announcement_id = #{id};
+    </select>
+
+    <!--更新标题自编号-->
+    <update id="updatetitleById">
+        update announcements
+        set title = #{title}
+        where announcement_id = #{id}
+    </update>
+
+    <!--更新内容自编号-->
+    <update id="updatecontentById">
+        update announcements
+        set content = #{content}
+        where announcement_id = #{id}
+    </update>
+
+    <!--新建通知-->
+    <insert id="newannouncement">
+        insert into announcements(announcement_id,title,content,publish_time,employee_id)
+        values(#{id},#{title},#{content},#{publish_time},#{employeeid});
+    </insert>
+
+</mapper>
